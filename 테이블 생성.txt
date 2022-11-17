@@ -1,0 +1,410 @@
+CREATE TABLE normal_user (
+    user_id     VARCHAR2(8),
+    user_pw     VARCHAR2(15) NOT NULL,
+    name        VARCHAR2(20) NOT NULL,
+    birth_date  DATE,
+    area        CHAR(8) NOT NULL,
+    email       VARCHAR2(30) NOT NULL UNIQUE,
+    phone       VARCHAR2(13) NOT NULL UNIQUE,
+    point       NUMBER(6) DEFAULT 0,
+    grade       CHAR(4) NOT NULL,
+    walk_dis    NUMBER(5) DEFAULT 0,
+    CONSTRAINT normal_user_PK PRIMARY KEY (user_id),
+    CONSTRAINT area_check CHECK (area IN ('서울', '대전', '대구', '부산', '울산', '광주', '세종', '강원도', '경기도', '충청남도',
+                                          '충청북도', '경상남도', '경상북도', '전라남도', '전라북도', '제주도')),
+
+    CONSTRAINT grade_check CHECK (grade IN ('실버', '골드'))
+);
+
+CREATE TABLE resign_normal_user (
+    user_id     VARCHAR2(8),
+    user_pw     VARCHAR2(15) NOT NULL,
+    name        VARCHAR2(20) NOT NULL,
+    birth_date  DATE,
+    area        CHAR(8) NOT NULL,
+    email       VARCHAR2(30) NOT NULL UNIQUE,
+    phone       VARCHAR2(13) NOT NULL UNIQUE,
+    point       NUMBER(6) DEFAULT 0,
+    grade       CHAR(4) NOT NULL,
+    walk_dis    NUMBER(5) DEFAULT 0,
+    CONSTRAINT resign_normal_user_PK PRIMARY KEY (user_id),
+    CONSTRAINT area_check2 CHECK (area IN ('서울', '대전', '대구', '부산', '울산', '광주', '세종', '강원도', '경기도', '충청남도',
+                                          '충청북도', '경상남도', '경상북도', '전라남도', '전라북도', '제주도')),
+
+    CONSTRAINT grade_check2 CHECK (grade IN ('실버', '골드'))
+);
+
+CREATE TABLE company_user (
+    user_id     VARCHAR2(8),
+    user_pw     VARCHAR2(15) NOT NULL,
+    logo        VARCHAR2(50),
+    com_name    VARCHAR2(20) NOT NULL,
+    dept        VARCHAR2(10) NOT NULL,
+    mgr_namme   VARCHAR2(20) NOT NULL,
+    phone       VARCHAR2(13) NOT NULL,
+    CONSTRAINT company_user_PK PRIMARY KEY (user_id)
+);
+
+CREATE TABLE product_code (
+    code        CHAR(1),
+    kinds       CHAR(15) NOT NULL,
+    CONSTRAINT product_code_PK PRIMARY KEY (code),
+    CONSTRAINT code_check CHECK (code BETWEEN 1 AND 7)
+
+);
+
+CREATE TABLE walk_meet (
+    meet_num    CHAR(5),
+    meet_info   VARCHAR2(500) NOT NULL,
+    meet_place  VARCHAR2(50) NOT NULL,
+    min_per     NUMBER(2),
+    max_per     NUMBER(3),
+    hold_time   VARCHAR2(10) NOT NULL,
+    end_time    VARCHAR2(10) NOT NULL,
+    hold_date   DATE NOT NULL,
+    CONSTRAINT walk_meet_PK PRIMARY KEY (meet_num)
+);
+
+CREATE TABLE walk_course (
+    crs_num     CHAR(5),
+    crs_name    VARCHAR2(50) NOT NULL UNIQUE,
+    crs_info    VARCHAR2(200) NOT NULL,
+    crs_map     VARCHAR2(100) NOT NULL,
+    theme       VARCHAR2(50),
+    area        VARCHAR2(20) NOT NULL,
+    distance    NUMBER(4,1) NOT NULL,
+    grade_avg   NUMBER(2,1) DEFAULT 0,
+    est_time    VARCHAR2(10) NOT NULL,
+    tour_info   VARCHAR2(100),
+    CONSTRAINT walk_course_PK PRIMARY KEY (crs_num)
+);
+
+CREATE TABLE recommend_season (
+    crs_num     CHAR(5),
+    crs_season  CHAR(4),
+    CONSTRAINT recommend_season_PK PRIMARY KEY (crs_num, crs_season),
+    CONSTRAINT season_check CHECK (crs_season IN ('봄', '여름', '가을', '겨울')),
+    CONSTRAINT crs_num_FK FOREIGN KEY (crs_num)
+            REFERENCES walk_course(crs_num)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE toilet_location (
+    crs_num     CHAR(5),
+    location    VARCHAR2(100),
+    CONSTRAINT toilet_location_PK PRIMARY KEY (crs_num, location),
+    CONSTRAINT crs_num_FK2 FOREIGN KEY (crs_num)
+            REFERENCES walk_course(crs_num)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE post (
+    post_num    CHAR(8),
+    title       VARCHAR2(30) NOT NULL,
+    category    CHAR(10) NOT NULL,
+    date_time   DATE DEFAULT SYSDATE,
+    content     VARCHAR2(1000) NOT NULL,
+    views       NUMBER(7) DEFAULT 0,
+    comments    NUMBER(4) DEFAULT 0,
+    CONSTRAINT post_PK PRIMARY KEY (post_num),
+    CONSTRAINT category_check CHECK (category IN ('공지사항', '자유게시판'))
+);
+
+CREATE TABLE post_comment (
+    com_num     CHAR(4),
+    post_num    CHAR(8),
+    date_time   DATE DEFAULT SYSDATE,
+    com_cont    VARCHAR2(200) NOT NULL,
+    CONSTRAINT post_comment_PK PRIMARY KEY (com_num, post_num),
+    CONSTRAINT post_num_FK FOREIGN KEY (post_num)
+            REFERENCES post(post_num)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE club (
+    club_num    CHAR(5),
+    club_name   VARCHAR2(30) NOT NULL UNIQUE,
+    area        CHAR(8) NOT NULL,
+    club_info   VARCHAR2(200),
+    members     NUMBER(5) DEFAULT 1,
+    founder_id  VARCHAR2(8) NOT NULL,
+    found_date  DATE DEFAULT SYSDATE,
+    CONSTRAINT club_PK PRIMARY KEY (club_num),
+    CONSTRAINT founder_id_FK FOREIGN KEY (founder_id)
+            REFERENCES normal_user(user_id)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE qrcode (
+    qr_id       CHAR(15),
+    qr_map      VARCHAR2(100) NOT NULL,
+    local_cur   NUMBER(7) NOT NULL,
+    CONSTRAINT qrcode_PK PRIMARY KEY (qr_id)
+);
+
+CREATE TABLE local_amount (
+    user_id     VARCHAR2(8),
+    area        CHAR(8),
+    amount      NUMBER(7) NOT NULL,
+    CONSTRAINT local_amount_PK PRIMARY KEY (user_id, area),
+    CONSTRAINT user_id_FK FOREIGN KEY (user_id)
+            REFERENCES normal_user(user_id)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE product (
+    prod_num    CHAR(6),
+    code        CHAR(1) NOT NULL,
+    prod_name   VARCHAR2(20) NOT NULL,
+    price       NUMBER(8) NOT NULL,
+    area        CHAR(8) NOT NULL,
+    exp         VARCHAR2(100) NOT NULL,
+    sell_state  CHAR(8) DEFAULT '판매중',
+    seller_id   VARCHAR2(8) NOT NULL,
+
+    CONSTRAINT product_PK PRIMARY KEY (prod_num),
+    CONSTRAINT code_check2 CHECK (code BETWEEN 1 AND 7),
+    CONSTRAINT area_check3 CHECK (area IN ('서울', '대전', '대구', '부산', '울산', '광주', '세종', '강원도', '경기도', '충청남도',
+                                          '충청북도', '경상남도', '경상북도', '전라남도', '전라북도', '제주도')),
+    CONSTRAINT sell_state_check CHECK (sell_state IN ('판매중', '판매완료')),
+    CONSTRAINT code_FK FOREIGN KEY (code)
+            REFERENCES product_code(code)
+            ON DELETE CASCADE,
+    CONSTRAINT seller_id_FK FOREIGN KEY (seller_id)
+            REFERENCES normal_user(user_id)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE picture (
+    prod_num    CHAR(8),
+    prod_pic    VARCHAR2(100),
+    CONSTRAINT picture_PK PRIMARY KEY (prod_num, prod_pic),
+    CONSTRAINT prod_num_FK FOREIGN KEY (prod_num)
+            REFERENCES product(prod_num)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE participate (
+    user_id     VARCHAR2(8),
+    meet_num    CHAR(5),
+    CONSTRAINT participate_PK PRIMARY KEY (user_id, meet_num),
+    CONSTRAINT user_id_FK2 FOREIGN KEY (user_id)
+            REFERENCES normal_user(user_id)
+            ON DELETE CASCADE,
+    CONSTRAINT meet_num_FK FOREIGN KEY (meet_num)
+            REFERENCES walk_meet(meet_num)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE normal_user_hold (
+    meet_num    CHAR(5),
+    hold_id     VARCHAR2(8) NOT NULL,
+    CONSTRAINT normal_user_hold_PK PRIMARY KEY (meet_num),
+    CONSTRAINT meet_num_FK2 FOREIGN KEY (meet_num)
+            REFERENCES walk_meet(meet_num)
+            ON DELETE CASCADE,
+    CONSTRAINT hold_id_FK FOREIGN KEY (hold_id)
+            REFERENCES normal_user(user_id)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE company_user_hold (
+    meet_num    CHAR(5),
+    hold_id     VARCHAR2(8) NOT NULL,
+    CONSTRAINT company_user_hold_PK PRIMARY KEY (meet_num),
+    CONSTRAINT meet_num_FK3 FOREIGN KEY (meet_num)
+            REFERENCES walk_meet(meet_num)
+            ON DELETE CASCADE,
+    CONSTRAINT hold_id_FK2 FOREIGN KEY (hold_id)
+            REFERENCES company_user(user_id)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE normal_user_post_write (
+    post_num    CHAR(8),
+    post_id     VARCHAR2(8) NOT NULL,
+    CONSTRAINT normal_user_post_write_PK PRIMARY KEY (post_num),
+    CONSTRAINT post_num_FK2 FOREIGN KEY (post_num)
+            REFERENCES post(post_num)
+            ON DELETE CASCADE,
+    CONSTRAINT post_id_FK FOREIGN KEY (post_id)
+            REFERENCES normal_user(user_id)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE company_user_post_write (
+    post_num    CHAR(8),
+    post_id     VARCHAR2(8) NOT NULL,
+    CONSTRAINT company_user_post_write_PK PRIMARY KEY (post_num),
+    CONSTRAINT post_num_FK3 FOREIGN KEY (post_num)
+            REFERENCES post(post_num)
+            ON DELETE CASCADE,
+    CONSTRAINT post_id_FK2 FOREIGN KEY (post_id)
+            REFERENCES company_user(user_id)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE send_company_to_company (
+    note_num    CHAR(8),
+    sender_id   VARCHAR2(8) NOT NULL,
+    rcpt_id     VARCHAR(8) NOT NULL,
+    date_time   DATE DEFAULT SYSDATE,
+    content     VARCHAR2(500) NOT NULL,
+    CONSTRAINT send_company_to_company_PK PRIMARY KEY (note_num),
+    CONSTRAINT sender_id_FK FOREIGN KEY (sender_id)
+            REFERENCES company_user(user_id)
+            ON DELETE CASCADE,
+    CONSTRAINT rcpt_id_FK FOREIGN KEY (rcpt_id)
+            REFERENCES company_user(user_id)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE send_normal_to_company (
+    note_num    CHAR(8),
+    sender_id   VARCHAR2(8) NOT NULL,
+    rcpt_id     VARCHAR(8) NOT NULL,
+    date_time   DATE DEFAULT SYSDATE,
+    content     VARCHAR2(500) NOT NULL,
+    CONSTRAINT send_normal_to_company_PK PRIMARY KEY (note_num),
+    CONSTRAINT sender_id_FK2 FOREIGN KEY (sender_id)
+            REFERENCES normal_user(user_id)
+            ON DELETE CASCADE,
+    CONSTRAINT rcpt_id_FK2 FOREIGN KEY (rcpt_id)
+            REFERENCES company_user(user_id)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE send_company_to_normal (
+    note_num    CHAR(8),
+    sender_id   VARCHAR2(8) NOT NULL,
+    rcpt_id     VARCHAR(8) NOT NULL,
+    date_time   DATE DEFAULT SYSDATE,
+    content     VARCHAR2(500) NOT NULL,
+    CONSTRAINT send_company_to_normal_PK PRIMARY KEY (note_num),
+    CONSTRAINT sender_id_FK3 FOREIGN KEY (sender_id)
+            REFERENCES company_user(user_id)
+            ON DELETE CASCADE,
+    CONSTRAINT rcpt_id_FK3 FOREIGN KEY (rcpt_id)
+            REFERENCES normal_user(user_id)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE send_normal_to_normal (
+    note_num    CHAR(8),
+    sender_id   VARCHAR2(8) NOT NULL,
+    rcpt_id     VARCHAR(8) NOT NULL,
+    date_time   DATE DEFAULT SYSDATE,
+    content     VARCHAR2(500) NOT NULL,
+    CONSTRAINT send_normal_to_normal_PK PRIMARY KEY (note_num),
+    CONSTRAINT sender_id_FK4 FOREIGN KEY (sender_id)
+            REFERENCES normal_user(user_id)
+            ON DELETE CASCADE,
+    CONSTRAINT rcpt_id_FK4 FOREIGN KEY (rcpt_id)
+            REFERENCES normal_user(user_id)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE normal_user_comment_write (
+    com_num     CHAR(4),
+    post_num    CHAR(8),
+    writer_id   VARCHAR2(8) NOT NULL,
+    CONSTRAINT normal_user_comment_write_PK PRIMARY KEY (com_num, post_num),
+    CONSTRAINT com_post_num_FK FOREIGN KEY (com_num, post_num)
+            REFERENCES post_comment(com_num, post_num)
+            ON DELETE CASCADE,
+    CONSTRAINT writer_id_FK FOREIGN KEY (writer_id)
+            REFERENCES normal_user(user_id)
+            ON DELETE CASCADE
+
+);
+
+CREATE TABLE company_user_comment_write (
+    com_num     CHAR(4),
+    post_num    CHAR(8),
+    writer_id   VARCHAR2(8) NOT NULL,
+    CONSTRAINT company_user_comment_write_PK PRIMARY KEY (com_num, post_num),
+    CONSTRAINT com_post_num_FK2 FOREIGN KEY (com_num, post_num)
+            REFERENCES post_comment(com_num, post_num)
+            ON DELETE CASCADE,
+    CONSTRAINT writer_id_FK2 FOREIGN KEY (writer_id)
+            REFERENCES company_user(user_id)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE evaluate (
+    user_id     VARCHAR2(8),
+    crs_num     CHAR(5),
+    grade       NUMBER(1) NOT NULL,
+    CONSTRAINT evaluate_PK PRIMARY KEY (user_id, crs_num),
+    CONSTRAINT user_id_FK3 FOREIGN KEY (user_id)
+            REFERENCES normal_user(user_id)
+            ON DELETE CASCADE,
+    CONSTRAINT crs_num_FK3 FOREIGN KEY (crs_num)
+            REFERENCES walk_course(crs_num)
+            ON DELETE CASCADE,
+    CONSTRAINT grade_check3 CHECK (grade IN (1, 2, 3, 4, 5))
+);
+
+CREATE TABLE wish (
+    user_id     VARCHAR2(8),
+    prod_num    CHAR(6),
+    CONSTRAINT wish_PK PRIMARY KEY (user_id, prod_num),
+    CONSTRAINT user_id_FK4 FOREIGN KEY (user_id)
+            REFERENCES normal_user(user_id)
+            ON DELETE CASCADE,
+    CONSTRAINT prod_num_FK2 FOREIGN KEY (prod_num)
+            REFERENCES product(prod_num)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE buy (
+    prod_num    CHAR(6),
+    buyer_id    VARCHAR2(8),
+    CONSTRAINT buy_PK PRIMARY KEY (prod_num, buyer_id),
+    CONSTRAINT prod_num_FK3 FOREIGN KEY (prod_num)
+            REFERENCES product(prod_num)
+            ON DELETE CASCADE,
+    CONSTRAINT buyer_id_FK FOREIGN KEY (buyer_id)
+            REFERENCES normal_user(user_id)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE manage (
+    club_num    CHAR(5),
+    master_id   VARCHAR2(8),
+    start_date  DATE DEFAULT SYSDATE,
+    end_date    DATE,
+    CONSTRAINT manage_PK PRIMARY KEY (club_num, master_id),
+    CONSTRAINT club_num_FK FOREIGN KEY (club_num)
+            REFERENCES club(club_num)
+            ON DELETE CASCADE,
+    CONSTRAINT master_id_FK FOREIGN KEY (master_id)
+            REFERENCES normal_user(user_id)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE sign_up (
+    user_id     VARCHAR2(8),
+    club_num    CHAR(5),
+    join_date   DATE DEFAULT SYSDATE,
+    CONSTRAINT sign_up_PK PRIMARY KEY (user_id, club_num),
+    CONSTRAINT user_id_FK5 FOREIGN KEY (user_id)
+            REFERENCES normal_user(user_id)
+            ON DELETE CASCADE,
+    CONSTRAINT club_num_FK2 FOREIGN KEY (club_num)
+            REFERENCES club(club_num)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE verify (
+    user_id     VARCHAR2(8),
+    qr_id       CHAR(15),
+    date_time   DATE DEFAULT SYSDATE,
+    CONSTRAINT verify_PK PRIMARY KEY (user_id, qr_id),
+    CONSTRAINT user_id_FK6 FOREIGN KEY (user_id)
+            REFERENCES normal_user(user_id)
+            ON DELETE CASCADE,
+    CONSTRAINT qr_id_FK FOREIGN KEY (qr_id)
+            REFERENCES qrcode(qr_id)
+            ON DELETE CASCADE
+);

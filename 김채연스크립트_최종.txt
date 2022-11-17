@@ -1,0 +1,169 @@
+지역화폐보유량
+
+INSERT INTO local_amount(user_id, area, amount) VALUES('hrts423', '서울', 140);
+INSERT INTO local_amount(user_id, area, amount) VALUES('hrts423', '제주도', 280);
+INSERT INTO local_amount(user_id, area, amount) VALUES('sjryjsgt', '대전', 200);
+INSERT INTO local_amount(user_id, area, amount) VALUES('sjryjsgt', '부산', 100);
+INSERT INTO local_amount(user_id, area, amount) VALUES('ethjeth', '경상북도', 470);
+INSERT INTO local_amount(user_id, area, amount) VALUES('srrssrw', '서울', 160);
+INSERT INTO local_amount(user_id, area, amount) VALUES('srrssrw', '광주', 1130);
+INSERT INTO local_amount(user_id, area, amount) VALUES('6sryeh', '대구', 270);
+INSERT INTO local_amount(user_id, area, amount) VALUES('hrts423', '전라남도', 12200);
+INSERT INTO local_amount(user_id, area, amount) VALUES('rtjhsi3', '전라남도', 2960);
+INSERT INTO local_amount(user_id, area, amount) VALUES('rtjhsi3', '전라북도', 3210);
+INSERT INTO local_amount(user_id, area, amount) VALUES('rtjhsi3', '제주도', 6420);
+INSERT INTO local_amount(user_id, area, amount) VALUES('46yrsth', '세종', 70);
+INSERT INTO local_amount(user_id, area, amount) VALUES('stmh57', '강원도', 1620);
+INSERT INTO local_amount(user_id, area, amount) VALUES('stmh57', '제주도', 1470);
+INSERT INTO local_amount(user_id, area, amount) VALUES('5uk24', '제주도', 6200);
+INSERT INTO local_amount(user_id, area, amount) VALUES('5thhrs', '대구', 440);
+INSERT INTO local_amount(user_id, area, amount) VALUES('5thhrs', '전라남도', 4240);
+INSERT INTO local_amount(user_id, area, amount) VALUES('uupiyg', '부산', 1290);
+INSERT INTO local_amount(user_id, area, amount) VALUES('uupiyg', '대전', 60);
+INSERT INTO local_amount(user_id, area, amount) VALUES('uupiyg', '경기도', 1210);
+INSERT INTO local_amount(user_id, area, amount) VALUES('xuxzz3', '부산', 230);
+INSERT INTO local_amount(user_id, area, amount) VALUES('nyrww1', '경기도', 610);
+INSERT INTO local_amount(user_id, area, amount) VALUES('tgeraqo', '전라남도', 4580);
+INSERT INTO local_amount(user_id, area, amount) VALUES('tgeraqo', '제주도', 12510);
+INSERT INTO local_amount(user_id, area, amount) VALUES('nyuw5452', '광주', 2240);
+INSERT INTO local_amount(user_id, area, amount) VALUES('teb240', '충청남도', 260);
+INSERT INTO local_amount(user_id, area, amount) VALUES('teb240', '충청북도', 480);
+INSERT INTO local_amount(user_id, area, amount) VALUES('bkipetop', '제주도', 420);
+INSERT INTO local_amount(user_id, area, amount) VALUES('bkipetop', '강원도', 2680);
+INSERT INTO local_amount(user_id, area, amount) VALUES('tejuire', '서울', 330);
+INSERT INTO local_amount(user_id, area, amount) VALUES('tejuire', '충청남도', 1330);
+INSERT INTO local_amount(user_id, area, amount) VALUES('tejuire', '전라남도', 230);
+INSERT INTO local_amount(user_id, area, amount) VALUES('tejuire', '경상남도', 3380);
+INSERT INTO local_amount(user_id, area, amount) VALUES('tejuire', '제주도', 1880);
+INSERT INTO local_amount(user_id, area, amount) VALUES('btiepq2', '대전', 210);
+INSERT INTO local_amount(user_id, area, amount) VALUES('btiepq2', '경기도', 2210);
+INSERT INTO local_amount(user_id, area, amount) VALUES('btiepq2', '강원도', 2110);
+INSERT INTO local_amount(user_id, area, amount) VALUES('btkeoap', '대구', 100);
+INSERT INTO local_amount(user_id, area, amount) VALUES('kfspae12', '서울', 230);
+INSERT INTO local_amount(user_id, area, amount) VALUES('fke33opa', '부산', 990);
+INSERT INTO local_amount(user_id, area, amount) VALUES('vfisa12', '경기도', 1520);
+INSERT INTO local_amount(user_id, area, amount) VALUES('1jikj2', '제주도', 1100);
+INSERT INTO local_amount(user_id, area, amount) VALUES('75ubv4', '전라남도' , 2650);
+INSERT INTO local_amount(user_id, area, amount) VALUES('6b6k55', '제주도', 3210);
+INSERT INTO local_amount(user_id, area, amount) VALUES('6b6k55', '전라남도', 310);
+INSERT INTO local_amount(user_id, area, amount) VALUES('vjh66nn', '대전', 1120);
+INSERT INTO local_amount(user_id, area, amount) VALUES('mkl54', '충청남도' ,4890);
+INSERT INTO local_amount(user_id, area, amount) VALUES('azseg3', '전라남도', 1010);
+INSERT INTO local_amount(user_id, area, amount) VALUES('azseg3', '제주도', 21100);
+INSERT INTO local_amount(user_id, area, amount) VALUES('azseg3', '경기도', 180);
+
+QR코드
+
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('A_1','https://map.kakao.com/link/search/불국사', 150);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('A_2', 'https://map.kakao.com/link/search/한남오거리', 20);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('A_3', 'https://map.kakao.com/link/search/해밀3로', 100);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('A_4', 'https://map.kakao.com/link/search/애월읍', 100);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('A_5', 'https://map.kakao.com/link/search/광안리', 180);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('A_6', 'https://map.kakao.com/link/search/이성당', 90);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('A_7', 'https://map.kakao.com/link/search/성심당', 230);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('A_8', 'https://map.kakao.com/link/search/한라산', 500);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('A_9', 'https://map.kakao.com/link/search/사려니', 100);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('A_10', 'https://map.kakao.com/link/search/성산공원', 60);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('B_1', 'https://map.kakao.com/link/search/남산타워', 220);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('B_2', 'https://map.kakao.com/link/search/세종호수공원', 40);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('B_3', 'https://map.kakao.com/link/search/오창호수공원', 120);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('B_4', 'https://map.kakao.com/link/search/북촌한옥마을', 60);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('B_5', 'https://map.kakao.com/link/search/익선동', 260);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('B_6', 'https://map.kakao.com/link/search/삼청기차박물관', 200);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('B_7', 'https://map.kakao.com/link/search/독립기념관', 100);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('B_8', 'https://map.kakao.com/link/search/한국기술교육대학교', 10);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('B_9', 'https://map.kakao.com/link/search/유달경기장', 60);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('B_10', 'https://map.kakao.com/link/search/여수엑스포역', 100);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('C_1', 'https://map.kakao.com/link/search/충주호', 150);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('C_2', 'https://map.kakao.com/link/search/경기도어린이박물관', 500);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('C_3', 'https://map.kakao.com/link/search/연화장', 100);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('C_4', 'https://map.kakao.com/link/search/초막골생태공원', 100);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('C_5', 'https://map.kakao.com/link/search/수리산도립공원', 100);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('C_6', 'https://map.kakao.com/link/search/지리산국립공원', 200);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('C_7', 'https://map.kakao.com/link/search/스타필드시티', 300);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('C_8', 'https://map.kakao.com/link/search/부천종합운동장', 500);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('C_9', 'https://map.kakao.com/link/search/대천해수욕장', 150);
+INSERT INTO qrcode(qr_id, qr_map, local_cur) VALUES('C_10', 'https://map.kakao.com/link/search/망원시장', 200);
+
+동호회
+
+INSERT INTO club(club_num, club_name, area, club_info, members, founder_id, found_date) VALUES('2', '꽃내음', '전라북도', '언제  몇시에 어디서 만남 늦을 시 지각비 있음', 15, 'sjryjsgt', TO_DATE('2009/01/22','YYYY/MM/DD'));
+INSERT INTO club(club_num, club_name, area, club_info, members, founder_id, found_date) VALUES('3', '봄내음', '제주도', '언제  몇시에 어디서 만남 늦을 시 지각비 있음', 20, 'ethjeth', TO_DATE('2019/01/22','YYYY/MM/DD'));
+INSERT INTO club(club_num, club_name, area, club_info, members, founder_id, found_date) VALUES('5', '길가온', '제주도', '언제  몇시에 어디서 만남 늦을 시 지각비 있음', 3, 'rtjhsi3', TO_DATE('2019/01/01','YYYY/MM/DD'));
+INSERT INTO club(club_num, club_name, area, club_info, members, founder_id, found_date) VALUES('6', '그린나래', '광주', '언제  몇시에 어디서 만남 늦을 시 지각비 있음', 3, '46yrsth', TO_DATE('2019/01/01','YYYY/MM/DD'));
+INSERT INTO club(club_num, club_name, area, club_info, members, founder_id, found_date) VALUES('7', '꽃가람', '충청남도', '언제  몇시에 어디서 만남 늦을 시 지각비 있음', 3, 'stmh57', TO_DATE('2018/01/01','YYYY/MM/DD'));
+INSERT INTO club(club_num, club_name, area, club_info, members, founder_id, found_date) VALUES('8', '글길', '제주도', '언제  몇시에 어디서 만남 늦을 시 지각비 있음', 3, '5uk24', TO_DATE('2019/01/01','YYYY/MM/DD'));
+INSERT INTO club(club_num, club_name, area, club_info, members, founder_id, found_date) VALUES('9', '가자', '경기도', '언제  몇시에 어디서 만남 늦을 시 지각비 있음', 3, '5thhrs', TO_DATE('2017/11/01','YYYY/MM/DD'));
+INSERT INTO club(club_num, club_name, area, club_info, members, founder_id, found_date) VALUES('11', '가든', '전라남도', '언제  몇시에 어디서 만남 늦을 시 지각비 있음', 7, 'tgeraqo', TO_DATE('2010/01/22','YYYY/MM/DD'));
+INSERT INTO club(club_num, club_name, area, club_info, members, founder_id, found_date) VALUES('12', '가장', '강원도', '언제  몇시에 어디서 만남 늦을 시 지각비 있음', 3, 'bkipetop', TO_DATE('2009/01/22','YYYY/MM/DD'));
+INSERT INTO club(club_num, club_name, area, club_info, members, founder_id, found_date) VALUES('13', '갈', '대구', '언제  몇시에 어디서 만남 늦을 시 지각비 있음', 5, 'tejuire', TO_DATE('2010/01/12','YYYY/MM/DD'));
+INSERT INTO club(club_num, club_name, area, club_info, members, founder_id, found_date) VALUES('14', '거울', '대전', '언제  몇시에 어디서 만남 늦을 시 지각비 있음', 5, 'btiepq2', TO_DATE('2019/05/12','YYYY/MM/DD'));
+INSERT INTO club(club_num, club_name, area, club_info, members, founder_id, found_date) VALUES('15', '가람휘', '세종', '언제  몇시에 어디서 만남 늦을 시 지각비 있음', 12, 'btkeoap', TO_DATE('2015/07/16','YYYY/MM/DD'));
+INSERT INTO club(club_num, club_name, area, club_info, members, founder_id, found_date) VALUES('16', '가림', '제주도', '언제  몇시에 어디서 만남 늦을 시 지각비 있음', 6, '1jikj2', TO_DATE('2018/10/30','YYYY/MM/DD'));
+INSERT INTO club(club_num, club_name, area, club_info, members, founder_id, found_date) VALUES('17', '가온', '경상북도', '언제  몇시에 어디서 만남 늦을 시 지각비 있음', 50, 'mkl54', TO_DATE('2016/12/12','YYYY/MM/DD'));
+INSERT INTO club(club_num, club_name, area, club_info, members, founder_id, found_date) VALUES('18', '가온해', '경상남도', '언제  몇시에 어디서 만남 늦을 시 지각비 있음', 70, 'azseg3', TO_DATE('2020/01/22','YYYY/MM/DD'));
+
+
+인증하다
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('hrts423', 'C_1', TO_DATE('20160901151212','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('hrts423', 'C_2', TO_DATE('20160901151212','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('hrts423', 'C_4', TO_DATE('20160901151212','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('hrts423', 'A_1', TO_DATE('20160901151212','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('hrts423', 'B_1', TO_DATE('20160901151212','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('sjryjsgt', 'C_2', TO_DATE('20160901151212','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('sjryjsgt', 'C_1', TO_DATE('20160901151212','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('sjryjsgt', 'A_1', TO_DATE('20160901151212','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('sjryjsgt', 'B_1', TO_DATE('20160901151212','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('sjryjsgt', 'C_5', TO_DATE('20160901151212','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('ethjeth', 'C_5', TO_DATE('20160901151212','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('ethjeth', 'C_1', TO_DATE('20160901151213','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('ethjeth', 'A_5', TO_DATE('20160901151214','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('ethjeth', 'A_6', TO_DATE('20160901151215','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('ethjeth', 'B_2', TO_DATE('20160901151216','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('ethjeth', 'C_3', TO_DATE('20160901151217','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('nyrww1', 'C_3', TO_DATE('20160901151218','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('nyrww1', 'C_4', TO_DATE('20160901151219','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('nyrww1', 'C_5', TO_DATE('20160901151222','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('nyrww1', 'C_6', TO_DATE('20160901151232','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('nyrww1', 'B_8', TO_DATE('20160901151242','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('tgeraqo', 'C_3', TO_DATE('20160901151252','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('tgeraqo', 'C_4', TO_DATE('20110901151202','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('tgeraqo', 'A_1', TO_DATE('20120901151202','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('tgeraqo', 'A_3', TO_DATE('20130901151202','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('fke33opa', 'B_3', TO_DATE('20140901151202','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('fke33opa', 'C_7', TO_DATE('20160901152212','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('fke33opa', 'B_7', TO_DATE('20160901121212','YYYYMMDDHH24MISS'));
+INSERT INTO verify(user_id, qr_id, date_time) VALUES('fke33opa', 'C_5', TO_DATE('20150901151212','YYYYMMDDHH24MISS'));
+
+관리하다
+INSERT INTO manage(club_num, master_id, start_date, end_date) VALUES('2', 'ethjeth', TO_DATE('2013/04/23','YYYY/MM/DD'), TO_DATE('2017/01/23','YYYY/MM/DD'));
+INSERT INTO manage(club_num, master_id, start_date, end_date) VALUES('3', 'rtjhsi3', TO_DATE('2013/03/23','YYYY/MM/DD'), TO_DATE('2019/05/23','YYYY/MM/DD'));
+INSERT INTO manage(club_num, master_id, start_date, end_date) VALUES('5', 'stmh57', TO_DATE('2013/01/23','YYYY/MM/DD'), TO_DATE('2021/05/23','YYYY/MM/DD'));
+INSERT INTO manage(club_num, master_id, start_date, end_date) VALUES('6', '5uk24', TO_DATE('2014/05/23','YYYY/MM/DD'), TO_DATE('2022/05/23','YYYY/MM/DD'));
+INSERT INTO manage(club_num, master_id, start_date, end_date) VALUES('7', '5thhrs', TO_DATE('2010/01/23','YYYY/MM/DD'), TO_DATE('2023/05/23','YYYY/MM/DD'));
+INSERT INTO manage(club_num, master_id, start_date, end_date) VALUES('8', 'nyrww1', TO_DATE('2011/02/23','YYYY/MM/DD'), TO_DATE('2017/04/23','YYYY/MM/DD'));
+INSERT INTO manage(club_num, master_id, start_date, end_date) VALUES('9', 'tgeraqo', TO_DATE('2013/05/26','YYYY/MM/DD'), TO_DATE('2017/06/23','YYYY/MM/DD'));
+INSERT INTO manage(club_num, master_id, start_date, end_date) VALUES('11', 'teb240', TO_DATE('2013/05/28','YYYY/MM/DD'), TO_DATE('2017/08/23','YYYY/MM/DD'));
+INSERT INTO manage(club_num, master_id, start_date, end_date) VALUES('12', 'bkipetop', TO_DATE('2013/05/12','YYYY/MM/DD'), TO_DATE('2017/09/23','YYYY/MM/DD'));
+INSERT INTO manage(club_num, master_id, start_date, end_date) VALUES('13', 'tejuire', TO_DATE('2013/05/20','YYYY/MM/DD'), TO_DATE('2017/10/23','YYYY/MM/DD'));
+INSERT INTO manage(club_num, master_id, start_date, end_date) VALUES('14', 'btiepq2', TO_DATE('2013/05/21','YYYY/MM/DD'), TO_DATE('2017/11/23','YYYY/MM/DD'));
+INSERT INTO manage(club_num, master_id, start_date, end_date) VALUES('15', 'btkeoap', TO_DATE('2013/05/03','YYYY/MM/DD'), TO_DATE('2017/12/23','YYYY/MM/DD'));
+INSERT INTO manage(club_num, master_id, start_date, end_date) VALUES('16', 'fke33opa', TO_DATE('2013/05/05','YYYY/MM/DD'), TO_DATE('2017/05/01','YYYY/MM/DD'));
+INSERT INTO manage(club_num, master_id, start_date, end_date) VALUES('17', '1jikj2', TO_DATE('2014/01/23','YYYY/MM/DD'), TO_DATE('2017/05/02','YYYY/MM/DD'));
+INSERT INTO manage(club_num, master_id, start_date, end_date) VALUES('18', 'mkl54', TO_DATE('2012/05/01','YYYY/MM/DD'), TO_DATE('2017/05/03','YYYY/MM/DD'));
+
+가입하다
+
+INSERT INTO sign_up(user_id, club_num, join_date) VALUES('vfisa12', '2', TO_DATE('2013/05/20','YYYY/MM/DD'));
+INSERT INTO sign_up(user_id, club_num, join_date) VALUES('1jikj2', '3', TO_DATE('2013/05/20','YYYY/MM/DD'));
+INSERT INTO sign_up(user_id, club_num, join_date) VALUES('vjh66nn', '5', TO_DATE('2013/02/20','YYYY/MM/DD'));
+INSERT INTO sign_up(user_id, club_num, join_date) VALUES('mkl54', '6', TO_DATE('2013/01/20','YYYY/MM/DD'));
+INSERT INTO sign_up(user_id, club_num, join_date) VALUES('azseg3', '7', TO_DATE('2013/06/20','YYYY/MM/DD'));
+INSERT INTO sign_up(user_id, club_num, join_date) VALUES('hrts423', '11', TO_DATE('2013/08/20','YYYY/MM/DD'));
+INSERT INTO sign_up(user_id, club_num, join_date) VALUES('sjryjsgt', '11', TO_DATE('2013/09/20','YYYY/MM/DD'));
+INSERT INTO sign_up(user_id, club_num, join_date) VALUES('ethjeth', '11', TO_DATE('2013/10/20','YYYY/MM/DD'));
+INSERT INTO sign_up(user_id, club_num, join_date) VALUES('srrssrw', '15', TO_DATE('2013/11/20','YYYY/MM/DD'));
+INSERT INTO sign_up(user_id, club_num, join_date) VALUES('6sryeh', '17', TO_DATE('2013/12/20','YYYY/MM/DD'));
+INSERT INTO sign_up(user_id, club_num, join_date) VALUES('rtjhsi3', '17', TO_DATE('2013/05/21','YYYY/MM/DD'));
+INSERT INTO sign_up(user_id, club_num, join_date) VALUES('75ubv4', '17', TO_DATE('2013/05/21','YYYY/MM/DD'));
+INSERT INTO sign_up(user_id, club_num, join_date) VALUES('6b6k55', '18', TO_DATE('2013/05/21','YYYY/MM/DD'));
